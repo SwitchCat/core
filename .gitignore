@@ -7,6 +7,6 @@ cache/
 documents/
 layouts/
 .phpunit.cache/
-*.rar
+core.rar
 test.php
 yaml.php
