@@ -6,7 +6,6 @@
 
 namespace SwitchCat\Initializer;
 
-use phpDocumentor\Reflection\Types\Self_;
 use SwitchCat\Exception\SwitchCatException;
 use Symfony\Component\Yaml\Yaml;
 
@@ -49,12 +48,11 @@ abstract class Initializer
      */
     public static function params():array
     {
-        if(!self::$params)
+        if(self::$params)
         {
-            throw new SwitchCatException(['Ini data not set.', __CLASS__, __FUNCTION__]);
-
+            return self::$params;
         }
-        return self::$params;
+        throw new SwitchCatException(['Ini data not set.', __CLASS__, __FUNCTION__]);
     }
     
     /**

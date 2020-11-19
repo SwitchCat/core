@@ -18,25 +18,16 @@ class SwitchCatException extends \Exception
     protected array $info;
 
     /**
-     * ControlException constructor.
-     * @param string $message
-     * @param string $class
-     * @param string $method
-     * @param int $code
+     * SwitchCatException constructor.
+     * @param array           $info
+     * @param string          $message
+     * @param int             $code
      * @param \Throwable|null $previous
      */
-    public function __construct(array $params, $message = "", $code = 0, \Throwable $previous = null)
+    public function __construct(array $info, string $message = "", int $code = 0, \Throwable $previous = null)
     {
         parent::__construct($message, $code, $previous);
-    }
-
-    /**
-     * @param string $update
-     */
-    public function updateMessage(string $update):void
-    {
-        $this->info['message'] .= $update;
-        $this->message = $this->info['message'];
+        $this->info = $info;
     }
 
     /**
@@ -45,13 +36,5 @@ class SwitchCatException extends \Exception
     public function getInfo():array
     {
         return $this->info;
-    }
-
-    /**
-     *
-     */
-    public function dumpInfo():void
-    {
-        var_dump($this->info);
     }
 }

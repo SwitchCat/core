@@ -3,4 +3,10 @@
 .github
 vendor/
 ini/
-tests/
+cache/
+documents/
+layouts/
+.phpunit.cache/
+*.rar
+test.php
+yaml.php

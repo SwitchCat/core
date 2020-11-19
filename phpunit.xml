@@ -18,14 +18,16 @@
             <directory suffix="Test.php">tests/unit/</directory>
         </testsuite>
     </testsuites>
-    <coverage cacheDirectory=".phpunit.cache/code-coverage"
-              processUncoveredFiles="true">
+    <coverage cacheDirectory=".phpunit.cache/code-coverage" processUncoveredFiles="true">
         <include>
+            <directory suffix=".php">Assets/</directory>
+            <directory suffix=".php">Cli/</directory>
+            <directory suffix=".php">Connections/</directory>
             <directory suffix=".php">Control/</directory>
-            <directory suffix=".php">Initializer/</directory>
+            <directory suffix=".php">Data/</directory>
             <directory suffix=".php">Exception/</directory>
+            <directory suffix=".php">Initializer/</directory>
+            <directory suffix=".php">Templates/</directory>
         </include>
     </coverage>
-
-
 </phpunit>
